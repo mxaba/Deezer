@@ -16,7 +16,7 @@
   
               <!-- <div *ngFor="let track in topFiveTracks" class="list-group-item">{{ track.title }}</div> -->
   
-              <div *ngIf="topTracks" class="artist-details__track-list">
+              <div *ngIf="topTracks" class="list-track">
                 <div *ngFor="let track of topTracks" class="track-list"><span>{{ track.title }}</span> <span>{{ track.duration / 60 | number }}</span>
                 </div>
               </div>
@@ -28,5 +28,6 @@
     <app-card
     [list]=albums
     [cardCalledFor]="'artistInfo'"
+    [Albums]="'Albums'"
     ></app-card>
 </div>

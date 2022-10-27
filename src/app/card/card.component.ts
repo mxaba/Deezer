@@ -9,6 +9,7 @@ import { DeezerApiServicesService } from '../services/deezer-api-services.servic
 export class CardComponent implements OnInit {
   @Input() list: any[] = [];
   @Input() cardCalledFor: string = ""
+  @Input() Albums: string = ""
   vlaue: any;
   @Output() click = new EventEmitter();
 
