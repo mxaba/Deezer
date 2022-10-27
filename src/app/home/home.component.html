@@ -5,3 +5,22 @@
       aria-describedby="search-text" autofocus>
   </div>
 </div>
+
+<div class="results-container container" *ngIf="toArtists">
+  <div class="row">
+    <div class="col-12 col-md-4 col-lg-3" *ngFor="let currentArtist of toArtists">
+      <a>
+        <div class="card">
+          <img src="{{ currentArtist.picture }}" class="card-img-top" alt="{{ currentArtist.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ currentArtist.name }}</h5>
+          </div>
+          <div class="card-footer">
+            <p>{{ currentArtist.nb_fan | number }}k Fans</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+

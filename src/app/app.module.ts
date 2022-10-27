@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './nav/nav.component';
+import { DeezerApiServicesService } from './services/deezer-api-services.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NavComponent } from './nav/nav.component';
     NgbModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
+  providers: [DeezerApiServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
