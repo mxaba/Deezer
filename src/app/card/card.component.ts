@@ -9,8 +9,8 @@ import { DeezerApiServicesService } from '../services/deezer-api-services.servic
 export class CardComponent implements OnInit {
   @Input() list: any[] = [];
   @Input() cardCalledFor: string = ""
-  value: any;
-  @Output() click = new EventEmitter();
+  vlaue: any;
+  @Output() click = new EventEmitter();
 
 
 
@@ -20,7 +20,6 @@ export class CardComponent implements OnInit {
   }
 
   change(value: any) {
-    console.log('id here', value)
     this.click.emit({value: value})
   }
 

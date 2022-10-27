@@ -11,13 +11,25 @@ export class ArtistProfileComponent implements OnInit {
   albums: any;
   currentArtist: any
   topTracks: any
+  id: number = 0;
   constructor(private router: ActivatedRoute, public api: DeezerApiServicesService) { }
 
   ngOnInit(): void {
-    const id = Number(this.router.snapshot.paramMap.get('id'));
-    this.getTopTracks(id)
-    this.getArtitDetails(id)
-    this.getAlbums(id)
+    this.id = Number(this.router.snapshot.paramMap.get('id'));
+    this.getTopTracks(this.id)
+    this.getArtitDetails(this.id)
+    this.getAlbums(this.id)
+  }
+
+  getArtistsByNameSearch(event: string): any {
+    if(event == ""){
+      this.getAlbums(this.id)
+      return
+    }
+
+    this.api.getSearchByAlbum(event).subscribe((res: any) => {
+      this.albums = res.body.data
+    })
   }
 
   getArtitDetails(id: number): any {

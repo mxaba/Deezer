@@ -18,11 +18,9 @@ export class HomeComponent implements OnInit {
   }
 
   getArtistsByNameSearch(event: string): any {
-    console.log("this.namePassed", event)
 
     this.api.getArtistByNameSearch(event).subscribe((res: any) => {
       this.artists = res.body.data
-      console.log("this.toArtists", this.artists)
     })
   }
 
@@ -38,7 +36,6 @@ export class HomeComponent implements OnInit {
   }
 
   route(event: any) {
-    console.log('event', event)
     this.router.navigate([`basic-info/${event?.value}`])
   }
 

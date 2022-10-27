@@ -28,6 +28,10 @@ export class DeezerApiServicesService {
     return this.httpClient.get<Config>(`/${this.deezer}search/artist?q=:$${namePassed}`, { observe: 'response' });
   }
 
+  getSearchByAlbum(namePassed: string): Observable<HttpResponse<Config>> {
+    return this.httpClient.get<Config>(`/${this.deezer}search/album?q=:$${namePassed}`, { observe: 'response' });
+  }
+
   getTopArtistsDetails(): Observable<HttpResponse<Config>> {
     return this.httpClient.get<Config>(`/${this.deezer}chart/O/artists`, { observe: 'response' });
   }

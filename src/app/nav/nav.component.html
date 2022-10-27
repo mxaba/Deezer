@@ -4,5 +4,10 @@
         <h1>Deezer</h1>
       </div>
     </nav>
+
+        <div class="form-group">
+          <input type="email" class="form-control form-control-lg" placeholder="Search artist" [(ngModel)]="namePassed" (ngModelChange)="change($event)" 
+            aria-describedby="search-text"  autofocus>
+        </div>
   
   </div>
