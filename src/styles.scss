@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-image: linear-gradient(to right,
+      #b6b7bd,
+      #6c6d74,
+      #8c8c97,
+      #d3d3d3,
+      #d1a7a7,
+      #797672);
+  height: 100%;
+  background-size: 400% 400%;
+  animation: body 20s infinite ease-in-out;
+  min-height: 100vh;
+}
+
+@keyframes body {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
