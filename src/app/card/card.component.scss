@@ -1,0 +1,110 @@
+.card {
+    background-image: linear-gradient(to right,
+        #dadce4,
+        #e5e7f8);
+    height: 100%;
+    animation: card 20s infinite ease-in-out;
+  }
+  
+  @keyframes card {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+  
+  .form-group {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    input {
+      border-radius: 0;
+      box-shadow: none;
+      outline: none;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #111;
+      color: #111;
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+  
+  .cardSpacing{
+    padding-top: 5%;
+  }
+  
+  .results-container {
+    margin-top: 50px;
+    .card-footer {
+      color: #111;
+    }
+  
+    .card {
+      margin-top: 30px;
+      border-radius: 0;
+      border: none;
+      box-shadow: 0 3px 10px rgba(243, 235, 235, 0.2);
+    }
+  
+  
+  
+    a {
+      text-decoration: none;
+  
+      h5 {
+        color: #111;
+      }
+  
+      p {
+        color: #464646;
+      }
+  
+      &:hover {
+        .card {
+          transform: scale(1.02);
+          transition: ease 0.2s;
+          box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
+        }
+      }
+    }
+  
+    &__number-of-fans {
+      display: none;
+      @media screen and (min-width: 1441px) {
+        display: block;
+      }
+    }
+  }
+  
+  .top-artist-row {
+    margin-top: 50px;
+  
+    @media screen and (min-width: 1366px) {
+      display: flex;
+    }
+  
+    div {
+      box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+      padding: 10px;
+      border-radius: 25px;
+      margin: 0 10px;
+      &:hover {
+        transform: scale(1.02);
+        transition: ease 0.2s;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
+      }
+    }
+  
+    a {
+      text-decoration: none;
+      color: #111;
+    }
+  }
+  

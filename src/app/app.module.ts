@@ -9,12 +9,16 @@ import { NavComponent } from './nav/nav.component';
 import { DeezerApiServicesService } from './services/deezer-api-services.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ArtistProfileComponent } from './artist-profile/artist-profile.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    ArtistProfileComponent,
+    CardComponent
   ],
   imports: [
     NgbModule,

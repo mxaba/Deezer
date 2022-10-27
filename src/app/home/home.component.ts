@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DeezerApiServicesService } from '../services/deezer-api-services.service';
 
 @Component({
@@ -7,9 +8,10 @@ import { DeezerApiServicesService } from '../services/deezer-api-services.servic
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  toArtists: any;
+  artists: any[] = [];
   namePassed = '';
-  constructor(public api: DeezerApiServicesService) { }
+  id: any;
+  constructor(public api: DeezerApiServicesService, private router: Router) { }
 
   ngOnInit(): void {
     this.getTopArtistsDetails()
@@ -19,20 +21,25 @@ export class HomeComponent implements OnInit {
     console.log("this.namePassed", event)
 
     this.api.getArtistByNameSearch(event).subscribe((res: any) => {
-      this.toArtists = res.body.data
-      console.log("this.toArtists", this.toArtists)
+      this.artists = res.body.data
+      console.log("this.toArtists", this.artists)
     })
   }
 
   getTopArtistsDetails(): any {
     this.api.getTopArtistsDetails().subscribe((res: any) => {
-      this.toArtists = res.body.data
-      this.toArtists.forEach((elem: { id: number; nb_fan: ""}) => {
+      this.artists = res.body.data
+      this.artists.forEach((elem: { id: number; nb_fan: ""}) => {
         this.api.getArtitDetails(elem.id).subscribe((res: any) => {
           elem["nb_fan"] = res.body["nb_fan"]
         })
       });
     })
+  }
+
+  route(event: any) {
+    console.log('event', event)
+    this.router.navigate([`basic-info/${event?.value}`])
   }
 
 }

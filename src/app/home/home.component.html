@@ -1,4 +1,5 @@
-<app-nav></app-nav>
+<app-nav
+></app-nav>
 <div class="container">
   <div class="form-group">
     <input type="email" class="form-control form-control-lg" placeholder="Search artist" (ngModelChange)="getArtistsByNameSearch($event)" [(ngModel)]="namePassed" 
@@ -6,20 +7,8 @@
   </div>
 </div>
 
-<div class="results-container container" *ngIf="toArtists">
-  <div class="row">
-    <div class="col-12 col-md-4 col-lg-3 cardSpacing" *ngFor="let currentArtist of toArtists">
-      <a>
-        <div class="card">
-          <img src="{{ currentArtist.picture }}" class="card-img-top" alt="{{ currentArtist.name }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ currentArtist.name }}</h5>
-          </div>
-          <div class="card-footer">
-            <p>{{ currentArtist.nb_fan | number }} Fans</p>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
+<app-card
+[cardCalledFor]="'home'"
+[list]=artists
+(click)="route($event)"
+></app-card>

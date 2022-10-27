@@ -1,0 +1,20 @@
+<div class="results-container container">
+    <div class="row">
+      <div class="col-12 col-md-4 col-lg-3 cardSpacing" *ngFor="let item of list">
+        <a (click)="change(item?.id)">
+          <div class="card">
+            <img  *ngIf="cardCalledFor=='home'" src="{{ item?.picture }}" class="card-img-top" alt="{{ item?.name }}">
+            <img  *ngIf="cardCalledFor=='artistInfo'" src="{{ item?.cover }}" class="card-img-top" alt="{{ item?.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ item?.name }}</h5>
+            </div>
+            <div class="card-footer">
+              <p *ngIf="cardCalledFor=='home'" >{{ item?.nb_fan | number }} Fans</p>
+              <p *ngIf="cardCalledFor=='artistInfo'" >{{ item?.title }}</p>
+              <p *ngIf="cardCalledFor=='artistInfo'" >{{ item?.release_date | date: 'yyyy'  }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
