@@ -17,7 +17,7 @@
               <!-- <div *ngFor="let track in topFiveTracks" class="list-group-item">{{ track.title }}</div> -->
   
               <div *ngIf="topTracks" class="list-track">
-                <div *ngFor="let track of topTracks; let i = index" class="track-list"><span> <strong> {{i+1}}.</strong> {{ track.title }}</span> <span>{{ track.duration / 60 | number }}</span>
+                <div *ngFor="let track of topTracks; let i = index" class="track-list"><span> <strong> {{i+1}}.</strong> {{ track.title }}</span> <span style="margin-left: 20px;">{{ track.duration / 60 | number }}</span>
                 </div>
               </div>
             </div>
