@@ -1,3 +1,23 @@
+.card {
+  background-image: linear-gradient(to right,
+      #dadce4,
+      #e5e7f8);
+  height: 100%;
+  animation: card 20s infinite ease-in-out;
+}
+
+@keyframes card {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 .form-group {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -18,6 +38,9 @@
 
 .results-container {
   margin-top: 50px;
+  .card-footer {
+    color: #111;
+  }
 
   .card {
     margin-top: 30px;
