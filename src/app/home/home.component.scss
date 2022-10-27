@@ -36,6 +36,10 @@
   }
 }
 
+.cardSpacing{
+  padding-top: 5%;
+}
+
 .results-container {
   margin-top: 50px;
   .card-footer {
@@ -48,6 +52,8 @@
     border: none;
     box-shadow: 0 3px 10px rgba(243, 235, 235, 0.2);
   }
+
+
 
   a {
     text-decoration: none;

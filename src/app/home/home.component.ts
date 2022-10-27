@@ -7,16 +7,24 @@ import { DeezerApiServicesService } from '../services/deezer-api-services.servic
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  searchText = '';
   toArtists: any;
+  namePassed = '';
   constructor(public api: DeezerApiServicesService) { }
 
   ngOnInit(): void {
     this.getTopArtistsDetails()
   }
 
+  getArtistsByNameSearch(event: string): any {
+    console.log("this.namePassed", event)
+
+    this.api.getArtistByNameSearch(event).subscribe((res: any) => {
+      this.toArtists = res.body.data
+      console.log("this.toArtists", this.toArtists)
+    })
+  }
+
   getTopArtistsDetails(): any {
-    console.log("ahdvsadcs")
     this.api.getTopArtistsDetails().subscribe((res: any) => {
       this.toArtists = res.body.data
       this.toArtists.forEach((elem: { id: number; nb_fan: ""}) => {
@@ -25,8 +33,6 @@ export class HomeComponent implements OnInit {
         })
       });
     })
-
-    console.log("this.toArtists   ", this.toArtists)
   }
 
 }

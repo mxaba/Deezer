@@ -1,14 +1,14 @@
 <app-nav></app-nav>
 <div class="container">
   <div class="form-group">
-    <input type="email" class="form-control form-control-lg"id="search-text"
-      aria-describedby="search-text" autofocus>
+    <input type="email" class="form-control form-control-lg" placeholder="Search artist" (ngModelChange)="getArtistsByNameSearch($event)" [(ngModel)]="namePassed" 
+      aria-describedby="search-text"  autofocus>
   </div>
 </div>
 
 <div class="results-container container" *ngIf="toArtists">
   <div class="row">
-    <div class="col-12 col-md-4 col-lg-3" *ngFor="let currentArtist of toArtists">
+    <div class="col-12 col-md-4 col-lg-3 cardSpacing" *ngFor="let currentArtist of toArtists">
       <a>
         <div class="card">
           <img src="{{ currentArtist.picture }}" class="card-img-top" alt="{{ currentArtist.name }}">

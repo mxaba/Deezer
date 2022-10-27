@@ -16,8 +16,11 @@ export class DeezerApiServicesService {
     return this.httpClient.get<Config>(`/${this.deezer}artist/${id}`, { observe: 'response' });
   }
 
+  getArtistByNameSearch(namePassed: string): Observable<HttpResponse<Config>> {
+    return this.httpClient.get<Config>(`/${this.deezer}search/artist?q=:$${namePassed}`, { observe: 'response' });
+  }
+
   getTopArtistsDetails(): Observable<HttpResponse<Config>> {
-    console.log("Heerererere")
     return this.httpClient.get<Config>(`/${this.deezer}chart/O/artists`, { observe: 'response' });
   }
 }
