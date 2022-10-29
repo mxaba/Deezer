@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "musicdb-app-angular"
+  "defaultProject": "musicdb-app-angular",
+  "cli": {
+    "analytics": false
+  }
 }
